@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+$: << "lib"
+require "toybot"
+
+bot = Toybot::Bot.new(5, 5)
+file = ARGV.first ? File.open(ARGV.first, 'r') : STDIN
+file.readlines.each do |line|
+  begin
+    bot.exec Toybot::Command.parse(line)
+  rescue Toybot::InvalidCommand
+  end
+end
+
