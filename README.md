@@ -1,10 +1,11 @@
 # Toy Robot Simulator
 
-## Running
+## Run
 
-``$ bundle install
-  $ ./bin/toybot examples/sample3
-``
+```
+$ bundle install
+$ ./bin/toybot examples/sample3
+```
 
 ## Description
 
