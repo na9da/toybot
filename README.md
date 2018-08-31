@@ -1,4 +1,4 @@
-# Toy Robot Simulator
+# Toy Robot Simulator in Ruby
 
 ## Usage
 
@@ -64,12 +64,4 @@ c)
     MOVE
     REPORT
     Output: 3,3,NORTH
-
-# Notes
-
-- The structure of the application is up to you. Use the choice of classes, gems, and testing frameworks that you feel works best.
-- Feel free to post your exercise to GitHub and include a link.
-- Otherwise, send a zip file with the entire application structure, including version control repository (if any)
-
-
 
