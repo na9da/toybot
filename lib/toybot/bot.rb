@@ -13,7 +13,9 @@ module Toybot
     end
 
     def exec(cmd)
-      return false if !placed? && cmd.name != :PLACE
+      if !placed? && cmd.name != :PLACE
+        return false
+      end
 
       case cmd.name
       when :PLACE then place(**cmd.args)
