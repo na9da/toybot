@@ -6,11 +6,11 @@ module Toybot
   class Bot
 
     attr_reader :x, :y, :direction
-    attr_reader :table_width, :table_height
+    attr_reader :table_width, :table_breadth
     
-    def initialize(width, height)
+    def initialize(width, breadth)
       @table_width = width
-      @table_height = height
+      @table_breadth = breadth
       @placed = false
     end
 
@@ -76,7 +76,7 @@ module Toybot
     end
     
     def on_table?(x, y)
-      x >= 0 && x < table_width && y >= 0 && y < table_height
+      x >= 0 && x < table_width && y >= 0 && y < table_breadth
     end
   end
 end
