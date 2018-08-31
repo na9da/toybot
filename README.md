@@ -1,10 +1,11 @@
 # Toy Robot Simulator
 
-## Run
+## Usage
 
 ```
 $ bundle install
-$ ./bin/toybot examples/sample3
+$ bundle exec rake test 
+$ bundle exec toybot examples/sample3
 ```
 
 ## Description

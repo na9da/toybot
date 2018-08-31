@@ -2,7 +2,7 @@ require "test_helper"
 
 class BotTest < MiniTest::Test
   def setup
-    @bot = Toybot::Bot.new(5, 5)
+    @bot = Toybot::Bot.new(Toybot::Table.new 5,5)
   end
 
   def test_it_can_be_placed_on_the_table
@@ -71,6 +71,6 @@ class BotTest < MiniTest::Test
   def test_if_not_placed_it_should_discard_the_command
     cmd = Toybot::Command.new
     cmd.name = :MOVE
-    assert_nil @bot.exec cmd
+    assert (@bot.exec cmd) == false
   end
 end
