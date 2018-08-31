@@ -1,6 +1,8 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
-
-# Specify your gem's dependencies in toybot.gemspec
-gemspec
+group :development do
+  gem 'bundler', '~> 1.16'
+  gem 'minitest', '~> 5.0'
+  gem 'rake', '~> 10.0'
+  gem 'rubocop', '~> 0.58.2'
+end

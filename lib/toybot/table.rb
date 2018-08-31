@@ -1,4 +1,7 @@
 module Toybot
+  #
+  # A table on which the bot is placed
+  #
   class Table
     
     attr_reader :width, :height
@@ -9,7 +12,7 @@ module Toybot
     end
     
     def on?(x, y)
-      x >=0 && x < @width && y >= 0 && y < @height
+      x >= 0 && x < @width && y >= 0 && y < @height
     end
   end
 end

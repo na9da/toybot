@@ -13,7 +13,7 @@ module Toybot
     end
 
     def exec(cmd)
-      if !placed? && cmd.name != :PLACE
+      unless placed? || cmd.name == :PLACE
         return false
       end
 
@@ -33,10 +33,10 @@ module Toybot
     end
     
     def place(x:, y:, direction:)
-      if table.on?(x, y)      
-        @x, @y, @direction = x, y, direction
-        @placed = true
-      end
+      return unless table.on?(x, y)
+
+      @x, @y, @direction = x, y, direction
+      @placed = true
     end
 
     def move_forward
