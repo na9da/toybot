@@ -4,7 +4,7 @@ module Toybot
   end
 
   #
-  # Command class parses a line of command passed
+  # Command class parses a line of command
   #
   class Command
     attr_accessor :name, :args
@@ -38,24 +38,10 @@ module Toybot
     
     private
     def parse_place(argstr)
-      x, y, dir = argstr.strip.split(",", 3)
-      { x: parse_int(x), y: parse_int(y), direction: parse_direction(dir) }
+      _, x, y, dir = argstr.strip.match(/^(\d+),(\d+),(NORTH|SOUTH|EAST|WEST)$/).to_a
+      { x: Integer(x), y: Integer(y), direction: dir.to_sym }
+    rescue TypeError
+      raise InvalidCommand
     end
-
-    def parse_int(s)
-      Integer(s)
-    rescue ArgumentError
-      raise InvalidCommand, "expected int, got #{s}"
-    end
-
-    def parse_direction(s)
-      sym = s&.to_sym
-      if %i(NORTH SOUTH EAST WEST).include?(sym)
-        sym
-      else
-        raise InvalidCommand, "expected direction, got #{s}"
-      end
-    end
-    
   end
 end
